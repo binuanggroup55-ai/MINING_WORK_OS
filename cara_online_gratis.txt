@@ -1,0 +1,21 @@
+MINING WORK OS — VERSI PWA
+
+Kenapa versi HTML lokal tidak bisa dipasang ke layar utama?
+Karena Chrome membuka file dengan file://. Fitur install PWA membutuhkan
+website HTTPS.
+
+VERSI INI SUDAH SIAP UNTUK HOSTING GRATIS.
+File penting:
+- index.html
+- manifest.webmanifest
+- sw.js
+
+Setelah di-host melalui HTTPS:
+1. Buka URL MINING WORK OS di Chrome.
+2. Chrome akan dapat mengenali aplikasi sebagai PWA.
+3. Gunakan menu Chrome > Tambahkan ke layar utama.
+4. Pada perangkat yang mendukung, tombol "Pasang MINING WORK OS ke HP"
+   juga akan muncul di halaman.
+
+Tidak perlu membeli domain untuk tahap testing.
+Kita bisa mulai dengan hosting gratis terlebih dahulu.

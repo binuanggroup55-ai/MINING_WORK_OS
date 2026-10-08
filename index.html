@@ -1,0 +1,186 @@
+<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta name="theme-color" content="#06140f"><title>Mining Work OS — Mining Work OS</title><style>
+:root{--bg:#06140f;--card:#0d241b;--card2:#102d22;--line:#245640;--text:#eef8f3;--muted:#9db7aa;--accent:#45e39a;--danger:#ff7b7b;--warn:#ffd166}*{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#06140f,#020906);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif}.wrap{max-width:1120px;margin:auto;padding:14px}.top{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 0;position:sticky;top:0;background:rgba(6,20,15,.96);z-index:10}.brand{font-weight:900}.brand small{display:block;color:var(--muted);font-size:11px}.pill,.badge{border:1px solid var(--line);border-radius:999px;padding:7px 10px;color:var(--muted);font-size:11px}.badge{display:inline-block;color:var(--accent);background:#0c241a}.hero{padding:22px 0}.hero h1{font-size:clamp(34px,7vw,62px);line-height:.98;margin:10px 0}.hero h1 span{color:var(--accent)}.hero p{color:var(--muted);max-width:850px;line-height:1.6}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.card{background:linear-gradient(180deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:18px;padding:18px}.module{min-height:190px;display:flex;flex-direction:column;justify-content:space-between}.module h3{margin:8px 0}.module p{color:var(--muted);font-size:13px;line-height:1.5}.btn{appearance:none;border:0;border-radius:10px;background:var(--accent);color:#032116;font-weight:900;padding:12px 15px;min-height:44px;touch-action:manipulation}.btn.secondary{background:transparent;color:var(--accent);border:1px solid var(--line)}.btn:active{transform:scale(.98)}.hidden{display:none!important}.view{margin-top:16px}.formgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.field label{display:block;color:var(--muted);font-size:12px;margin-bottom:5px}.field input,.field select,.field textarea{width:100%;background:#071811;color:var(--text);border:1px solid var(--line);border-radius:10px;padding:11px;min-height:44px}.field textarea{min-height:90px}.full{grid-column:1/-1}.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.statgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:12px 0}.stat{padding:12px;border:1px solid var(--line);border-radius:12px;background:#081a13}.stat b{display:block;font-size:21px}.stat span{font-size:11px;color:var(--muted)}.tablewrap{overflow:auto}.tablewrap table{width:100%;border-collapse:collapse;font-size:12px;min-width:980px}.tablewrap th,.tablewrap td{border-bottom:1px solid #183c2e;padding:8px;text-align:left;vertical-align:top}.tablewrap input{background:#071811;color:var(--text);border:1px solid var(--line);border-radius:7px;padding:8px}.notice{padding:12px;border-left:3px solid var(--accent);background:#092016;color:var(--muted);margin:10px 0;border-radius:8px}.pricegrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.price b{font-size:27px}.price ul{color:var(--muted);padding-left:18px;line-height:1.8}.modal{position:fixed;inset:0;background:rgba(0,0,0,.75);display:flex;align-items:center;justify-content:center;padding:16px;z-index:30}.modal .card{width:min(480px,100%)}.footer{color:#6e897d;text-align:center;padding:35px 0;font-size:11px}@media(max-width:800px){.grid,.pricegrid{grid-template-columns:1fr 1fr}.formgrid{grid-template-columns:1fr}.statgrid{grid-template-columns:1fr 1fr}}@media(max-width:520px){.grid,.pricegrid{grid-template-columns:1fr}.wrap{padding:12px}.top{position:static}.hero h1{font-size:40px}}
+</style>
+<style>
+.eyebrow{font-size:11px;letter-spacing:1.4px;font-weight:800;opacity:.7}
+.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:14px 0}
+.kpi{padding:14px;border:1px solid rgba(255,255,255,.08);border-radius:14px;background:rgba(255,255,255,.035)}
+.kpi b{display:block;font-size:25px}.kpi span{font-size:11px;opacity:.7}.kpi.danger b{color:#ff7a7a}
+.dashboard-grid{display:grid;grid-template-columns:1.2fr 1fr 1.4fr;gap:10px}
+.mini-panel{padding:15px;border:1px solid rgba(255,255,255,.08);border-radius:14px;background:rgba(255,255,255,.025)}
+.mini-title{font-size:12px;font-weight:800;opacity:.7}.big-number{font-size:30px;font-weight:900;margin-top:7px}
+.muted{font-size:11px;opacity:.6}.progress,.trial-meter{height:7px;background:rgba(255,255,255,.1);border-radius:99px;overflow:hidden;margin-top:10px}
+.progress i,.trial-meter i{display:block;height:100%;background:#5fd68b;border-radius:99px}
+.alert-row{font-size:12px;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+.dashboard-actions,.trial-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.trial-card{border:1px solid rgba(95,214,139,.25)}
+@media(max-width:720px){.kpi-grid{grid-template-columns:repeat(2,1fr)}.dashboard-grid{grid-template-columns:1fr}.kpi b{font-size:22px}}
+</style>
+
+
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+<meta name="theme-color" content="#06261b">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="MINING WORK OS">
+
+
+<style>
+@media(max-width:720px){
+  .tablewrap{overflow:visible}.tablewrap table{min-width:0;display:block}.tablewrap thead{display:none}.tablewrap tbody,.tablewrap tr{display:block}.tablewrap tr{margin:0 0 12px;padding:12px;border:1px solid var(--line);border-radius:14px;background:#071811}.tablewrap td{display:grid;grid-template-columns:110px 1fr;gap:8px;border:0;padding:5px 0}.tablewrap td::before{content:attr(data-label);color:var(--muted);font-size:11px;font-weight:700;padding-top:9px}.tablewrap td input{width:100%}.tablewrap td:nth-child(5) input{font-weight:900}.production-kpi{grid-template-columns:repeat(2,1fr)!important}.loss-grid{grid-template-columns:1fr!important}
+}
+.print-only{display:none}
+@media print{
+  @page{size:A4 landscape;margin:10mm}
+  body{background:#fff!important;color:#111!important}
+  body *{visibility:hidden!important}
+  .view.card,.view.card *{visibility:visible!important}
+  .view.card{position:absolute;left:0;top:0;width:100%;margin:0!important;border:0!important;background:#fff!important;color:#111!important}
+  .view.card .btn,.view.card .actions,.view.card input,.view.card select,.view.card textarea,.view.card .tablewrap{display:none!important}
+  .print-only{display:block!important}
+  .stat{background:#fff!important;border:1px solid #bbb!important}.stat b,.stat span,.notice,.mini-title,.muted{color:#111!important}
+  .notice{background:#f5f5f5!important;border-left:3px solid #222!important}
+}
+</style>
+</head><body>
+
+<div id="pwaInstallBar" style="display:none;position:sticky;top:0;z-index:9999;padding:10px 12px;background:#0b3a28;border-bottom:1px solid rgba(255,255,255,.12);text-align:center">
+  <button id="installAppBtn" type="button" class="primary" style="width:auto">📲 Pasang MINING WORK OS ke HP</button>
+</div>
+
+<section class="card" id="supervisorDashboard" style="margin-bottom:16px">
+  <div class="section-title">
+    <div>
+      <div class="eyebrow">SUPERVISOR CONTROL CENTER</div>
+      <h2>Dashboard Operasional</h2>
+    </div>
+    <span class="badge">LIVE DEMO</span>
+  </div>
+  <div class="kpi-grid">
+    <div class="kpi"><b id="kpiReady">12</b><span>Unit Ready</span></div>
+    <div class="kpi"><b id="kpiStandby">2</b><span>Standby</span></div>
+    <div class="kpi danger"><b id="kpiBreakdown">1</b><span>Breakdown</span></div>
+    <div class="kpi"><b id="kpiAch">92%</b><span>Achievement</span></div>
+  </div>
+  <div class="dashboard-grid">
+    <div class="mini-panel">
+      <div class="mini-title">Produksi Hari Ini</div>
+      <div class="big-number" id="dashActual">2.640</div>
+      <div class="muted" id="dashTargetLabel">target 2.500 ton</div>
+      <div class="progress"><i id="dashProgress" style="width:92%"></i></div>
+    </div>
+    <div class="mini-panel">
+      <div class="mini-title">Productivity</div>
+      <div class="big-number" id="dashProd">73,3</div>
+      <div class="muted">Ton / jam</div>
+    </div>
+    <div class="mini-panel">
+      <div class="mini-title">Perlu Perhatian</div>
+      <div class="alert-row">🔴 DT-05 — Rain delay (60 min)</div>
+      <div class="alert-row">🟡 DT-02 — Breakdown hydraulic (45 min)</div>
+      <div class="alert-row">🟢 Target produksi tercapai</div>
+    </div>
+  </div>
+  <div class="dashboard-actions">
+    <button type="button" class="primary" onclick="document.getElementById('production').scrollIntoView({behavior:'smooth'})">Buka Produksi</button>
+    <button type="button" onclick="document.getElementById('fleet').scrollIntoView({behavior:'smooth'})">Kesiapan & Breakdown</button>
+  </div>
+</section>
+<div class="wrap"><header class="top"><div class="brand">⛏️ Mining Work OS <small>Professional Mining Work OS</small></div><div><span class="pill" id="usage">BETA • 5 USES</span></div></header><section class="hero"><span class="badge">MINING OPERATIONS • BETA</span><h1>Satu tool untuk <span>pekerjaan tambang.</span></h1><p>Produksi, produktivitas, achievement, shortfall, fleet readiness, breakdown, maintenance, safety, daily report dan komunikasi kerja.</p></section><main id="home"><div class="grid" id="modules"></div><section class="card" style="margin-top:14px"><span class="badge">SIAP DIGUNAKAN DI OPERASIONAL</span><h2>Langganan MINING WORK OS</h2><p class="muted" style="max-width:760px">Dibuat untuk membantu supervisor mengubah data operasi menjadi KPI, loss, corrective action dan laporan kerja yang siap dibagikan.</p><div class="pricegrid" id="prices"></div><div class="notice">💳 Pembayaran diproses melalui payment gateway. Data kartu/akun pembayaran tidak disimpan oleh MINING WORK OS.</div></section></main><div id="views"></div><div id="modalRoot"></div><footer class="footer">Mining Work OS © 2026 • Tool bantu administrasi operasional; tetap ikuti SOP/JSA dan keputusan teknis perusahaan.</footer></div><script src="https://app.midtrans.com/snap/snap.js" data-client-key=""></script><script>
+const $=s=>document.querySelector(s);const $$=s=>Array.from(document.querySelectorAll(s));let rows={production:[],fleet:[]};let currentEmail=localStorage.getItem('mat_email')||'';
+const plans=[['STARTER','Rp99K','Untuk pengguna individual','99000'],['PRO','Rp199K','Untuk foreman / supervisor','199000'],['TEAM','Rp499K','Untuk tim / site','499000']];
+const modules=[['📊','Production & Productivity','Multi-unit, quantity, productivity, target, achievement, shortfall, reason & corrective action','production'],['🔧','Fleet Readiness & Breakdown','Kesiapan unit, HM, breakdown duration, problem, cause, action, PIC & follow-up','fleet'],['🛠️','Maintenance','Complaint, inspection, cause, repair, spare part, status & follow-up','maintenance'],['🦺','Safety & Toolbox','Topic, hazard, risk, control, PPE, briefing & acknowledgement','safety'],['📋','Daily / Shift Report','Gabungkan produksi, fleet, safety, loss dan management summary','daily'],['✉️','Office & HR','Email, memo, surat, vendor follow-up dan komunikasi operasional','office']];
+function esc(v){return String(v??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}function btn(text,cls='btn'){const b=document.createElement('button');b.className=cls;b.type='button';b.textContent=text;return b}function csvDownload(name,arr){const csv=arr.map(r=>r.map(x=>'"'+String(x??'').replace(/"/g,'""')+'"').join(',')).join('\n');const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));a.download=name+'.csv';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),500)}function copy(t){if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(t).then(()=>alert('Berhasil disalin.')).catch(()=>prompt('Salin:',t));}else prompt('Salin teks:',t)}
+function renderHome(){const m=$('#modules');m.innerHTML='';modules.forEach(x=>{const c=document.createElement('section');c.className='card module';c.innerHTML='<div><div>'+x[0]+'</div><h3>'+x[1]+'</h3><p>'+x[2]+'</p></div>';const b=btn('Buka →');b.addEventListener('click',()=>openTool(x[3]));c.appendChild(b);m.appendChild(c)});const p=$('#prices');p.innerHTML='';plans.forEach(x=>{const c=document.createElement('section');c.className='card price';c.innerHTML='<span class="badge">'+x[0]+'</span><h3>'+x[1]+'/bulan</h3><p>'+x[2]+'</p><ul><li>Semua tool inti</li><li>WA + CSV/Excel</li><li>Riwayat akun</li><li>Aktivasi otomatis setelah pembayaran</li></ul>';const b=btn('Aktifkan '+x[0]);b.addEventListener('click',()=>showCheckout(x[0]));c.appendChild(b);p.appendChild(c)})}
+function view(title){$('#home').classList.add('hidden');const box=document.createElement('section');box.className='view card';const back=btn('← Kembali','btn secondary');back.addEventListener('click',()=>{$('#views').innerHTML='';$('#home').classList.remove('hidden')});box.appendChild(back);const h=document.createElement('h2');h.textContent=title;box.appendChild(h);$('#views').innerHTML='';$('#views').appendChild(box);return box}
+function field(parent,label,id,type='text',placeholder='',value=''){const d=document.createElement('div');d.className='field';const l=document.createElement('label');l.textContent=label;const i=document.createElement(type==='textarea'?'textarea':'input');if(type!=='textarea')i.type=type;i.id=id;i.placeholder=placeholder;i.value=value;d.append(l,i);parent.appendChild(d);return i}
+function production(){const box=view('📊 Production & Productivity');const fg=document.createElement('div');fg.className='formgrid';field(fg,'Tanggal','pd','date');field(fg,'Target total (ton)','pt','number','2500','2500');field(fg,'Shift','ps','text','Shift 1','Shift 1');field(fg,'Supervisor / PIC','pp','text','Nama');box.appendChild(fg);const ac=document.createElement('div');ac.className='actions';const demo=btn('Isi 5 Unit Demo'),add=btn('+ Tambah Unit','btn secondary');ac.append(demo,add);box.appendChild(ac);const table=document.createElement('div');table.id='ptbl';box.appendChild(table);const sum=document.createElement('div');sum.id='psum';box.appendChild(sum);demo.addEventListener('click',()=>{rows.production=[['DT-01','OB','80','10','800','8','0','-','-'],['DT-02','OB','75','9','675','8','45','Breakdown hydraulic','Ganti hose & test'],['DT-03','Coal','60','8','480','7','30','Waiting loading','Perbaiki dispatch'],['DT-04','Coal','55','7','385','7','0','-','-'],['DT-05','OB','50','6','300','6','60','Rain delay','Resume setelah kondisi aman']];renderP(table,sum);calcP(sum)});add.addEventListener('click',()=>{rows.production.push(['DT-NEW','OB','0','0','0','0','0','','']);renderP(table,sum)});renderP(table,sum)}
+function syncActual(r){r[4]=(Number(r[2]||0)*Number(r[3]||0)).toFixed(0)}
+function prodMetrics(){rows.production.forEach(syncActual);const total=rows.production.reduce((a,r)=>a+Number(r[4]||0),0),target=Number($('#pt')?.value||0),run=rows.production.reduce((a,r)=>a+Number(r[5]||0),0),dt=rows.production.reduce((a,r)=>a+Number(r[6]||0),0),prod=run?total/run:0,ach=target?total/target*100:0,shortfall=Math.max(0,target-total);return{total,target,run,dt,prod,ach,shortfall}}
+function renderP(table,sum){table.innerHTML='';if(!rows.production.length){sum.innerHTML='<div class="notice">Tekan <b>Isi 5 Unit Demo</b> atau tambah unit untuk mulai.</div>';return}const wrap=document.createElement('div');wrap.className='tablewrap';const t=document.createElement('table');t.innerHTML='<thead><tr><th>Unit</th><th>Material</th><th>Trip</th><th>Ton/Trip</th><th>Actual Ton</th><th>Run h</th><th>Downtime min</th><th>Alasan / Loss</th><th>Corrective Action</th><th>Prod. Ton/Jam</th></tr></thead>';const labels=['Unit','Material','Trip','Ton/Trip','Actual Ton','Run Hours','Downtime Min','Alasan / Loss','Corrective Action','Prod. Ton/Jam'];const tb=document.createElement('tbody');rows.production.forEach((r,i)=>{syncActual(r);const tr=document.createElement('tr');r.forEach((v,j)=>{const td=document.createElement('td');td.dataset.label=labels[j];const inp=document.createElement('input');inp.value=v;if(j===4){inp.readOnly=true;inp.title='Otomatis = Trip × Ton/Trip'}else{inp.addEventListener('input',e=>{rows.production[i][j]=e.target.value;if(j===2||j===3){syncActual(rows.production[i]);renderP(table,sum)}})}td.appendChild(inp);tr.appendChild(td)});const td=document.createElement('td');td.dataset.label=labels[9];td.innerHTML='<strong>'+((Number(r[5]||0)>0)?(Number(r[4]||0)/Number(r[5])).toFixed(1):'0.0')+'</strong>';tr.appendChild(td);tb.appendChild(tr)});t.appendChild(tb);wrap.appendChild(t);table.appendChild(wrap);const ac=document.createElement('div');ac.className='actions';const calc=btn('Hitung Laporan'),wa=btn('Copy WhatsApp','btn secondary'),csv=btn('Excel/CSV','btn secondary'),pr=btn('Print/PDF','btn secondary');ac.append(calc,wa,csv,pr);table.appendChild(ac);calc.addEventListener('click',()=>calcP(sum));wa.addEventListener('click',()=>copy(prodText()));csv.addEventListener('click',()=>{const m=prodMetrics();csvDownload('production-report',[['Unit','Material','Trip','Ton/Trip','Actual Ton','Run Hours','Productivity Ton/Hour','Downtime Min','Reason','Action'],...rows.production.map(r=>[r[0],r[1],r[2],r[3],r[4],r[5],Number(r[5]||0)?(Number(r[4])/Number(r[5])).toFixed(1):'0.0',r[6],r[7]||'-',r[8]||'-']),[],['SUMMARY','Target Ton',m.target,'Actual Ton',m.total,'Achievement',m.ach.toFixed(1)+'%','Productivity',m.prod.toFixed(1)+' ton/jam','Downtime',m.dt+' min']])});pr.addEventListener('click',()=>window.print());calcP(sum)}
+function calcP(sum){const m=prodMetrics();updateDashboard(m);const losses=rows.production.filter(r=>Number(r[6]||0)>0).sort((a,b)=>Number(b[6]||0)-Number(a[6]||0));const top=losses[0];sum.innerHTML='<div class="statgrid production-kpi"><div class="stat"><b>'+m.total.toFixed(0)+'</b><span>Actual Ton</span></div><div class="stat"><b>'+m.target.toFixed(0)+'</b><span>Target Ton</span></div><div class="stat"><b>'+m.ach.toFixed(1)+'%</b><span>Achievement</span></div><div class="stat"><b>'+m.shortfall.toFixed(0)+'</b><span>Shortfall Ton</span></div><div class="stat"><b>'+m.prod.toFixed(1)+'</b><span>Productivity Ton/Jam</span></div><div class="stat"><b>'+m.run.toFixed(1)+'</b><span>Total Run Hours</span></div><div class="stat"><b>'+m.dt.toFixed(0)+'</b><span>Total Downtime Min</span></div><div class="stat"><b>'+(top?esc(top[0]):'-')+'</b><span>Top Loss Unit</span></div></div><div class="dashboard-grid loss-grid"><div class="mini-panel"><div class="mini-title">OPERATIONAL LOSS</div><div class="big-number">'+m.dt.toFixed(0)+' min</div><div class="muted">Total downtime</div></div><div class="mini-panel"><div class="mini-title">TOP LOSS</div><div class="big-number">'+(top?esc(top[0]):'-')+'</div><div class="muted">'+(top?(esc(top[7]||'Downtime')+' • '+Number(top[6]||0)+' min'):'Tidak ada downtime')+'</div></div><div class="mini-panel"><div class="mini-title">CORRECTIVE ACTION</div><div class="muted">'+(losses.length?losses.map(r=>'• '+esc(r[0])+' — '+esc(r[8]||'Action belum diisi')).join('<br>'):'Tidak ada loss yang perlu ditindaklanjuti.')+'</div></div></div><div class="notice">Produktivitas = Actual Ton ÷ Total Run Hours. <b>Actual Ton dihitung otomatis dari Trip × Ton/Trip.</b> Jika achievement &lt;100%, alasan loss dan corrective action wajib diisi.</div><div class="print-only"><h2>MINING WORK OS — DAILY PRODUCTION REPORT</h2><p>Tanggal: '+esc($('#pd')?.value||'-')+' | Shift: '+esc($('#ps')?.value||'-')+' | Supervisor/PIC: '+esc($('#pp')?.value||'-')+'</p><p>Target '+m.target.toFixed(0)+' ton • Actual '+m.total.toFixed(0)+' ton • Achievement '+m.ach.toFixed(1)+'% • Productivity '+m.prod.toFixed(1)+' ton/jam • Downtime '+m.dt.toFixed(0)+' min</p></div>'; }
+function prodText(){const m=prodMetrics();const losses=rows.production.filter(r=>Number(r[6]||0)>0).sort((a,b)=>Number(b[6]||0)-Number(a[6]||0));return '📊 DAILY PRODUCTION REPORT — MINING WORK OS\nTanggal: '+($('#pd')?.value||'-')+' | Shift: '+($('#ps')?.value||'-')+' | PIC: '+($('#pp')?.value||'-')+'\n\nKPI\nTarget: '+m.target+' ton\nActual: '+m.total+' ton\nAchievement: '+m.ach.toFixed(1)+'%\nShortfall: '+m.shortfall+' ton\nProductivity: '+m.prod.toFixed(1)+' ton/jam\nTotal Run Hours: '+m.run.toFixed(1)+' jam\nTotal Downtime: '+m.dt+' menit\n\nFLEET PERFORMANCE\n'+rows.production.map(r=>'• '+r[0]+' | '+r[1]+' | '+r[4]+' ton | '+(Number(r[5]||0)?(Number(r[4])/Number(r[5])).toFixed(1):'0.0')+' ton/jam | DT '+r[6]+' min').join('\n')+'\n\nTOP LOSS\n'+(losses.length?losses.map(r=>'• '+r[0]+' — '+(r[7]||'Downtime')+' — '+r[6]+' min\n  Action: '+(r[8]||'Belum diisi')).join('\n'):'• Tidak ada downtime')+'\n\nSTATUS: '+(m.ach>=100?'TARGET TERCAPAI':'PERLU TINDAKAN')+'\nManagement note: '+(m.ach>=100?'Produksi mencapai target. Fokus pada pengendalian downtime dan menjaga produktivitas.':'Target belum tercapai. Prioritaskan unit dengan loss terbesar dan corrective action.')}
+function fleet(){const box=view('🔧 Fleet Readiness & Breakdown');const fg=document.createElement('div');fg.className='formgrid';field(fg,'Tanggal','fd','date');field(fg,'PIC','fp','text','Nama');box.appendChild(fg);const ac=document.createElement('div');ac.className='actions';const demo=btn('Isi 5 Unit Demo'),add=btn('+ Tambah Unit','btn secondary');ac.append(demo,add);box.appendChild(ac);const table=document.createElement('div');const sum=document.createElement('div');box.append(table,sum);demo.addEventListener('click',()=>{rows.fleet=[['DT-01','Ready','1200','1210','0','-','-','-','-','-'],['DT-02','Breakdown','900','905','45','Hydraulic leak','Hose fitting','Replace hose','ME-01','Closed'],['DT-03','Standby','1100','1106','0','-','-','-','-','-'],['DT-04','Ready','800','808','0','-','-','-','-','-'],['DT-05','Maintenance','1500','1505','120','Scheduled PM','PM service','Continue PM','ME-02','Open']];renderF(table,sum)});add.addEventListener('click',()=>{rows.fleet.push(['NEW','Ready','0','0','0','','','','','']);renderF(table,sum)});renderF(table,sum)}
+function renderF(table,sum){table.innerHTML='';if(!rows.fleet.length){sum.innerHTML='<div class="notice">Tekan <b>Isi 5 Unit Demo</b> atau tambah unit.</div>';return}const wrap=document.createElement('div');wrap.className='tablewrap';const t=document.createElement('table');t.innerHTML='<thead><tr><th>Unit</th><th>Status</th><th>HM Awal</th><th>HM Akhir</th><th>BD Min</th><th>Problem</th><th>Cause</th><th>Action</th><th>PIC</th><th>Follow-up</th></tr></thead>';const tb=document.createElement('tbody');rows.fleet.forEach((r,i)=>{const tr=document.createElement('tr');r.forEach((v,j)=>{const td=document.createElement('td');const inp=document.createElement('input');inp.value=v;inp.addEventListener('input',e=>rows.fleet[i][j]=e.target.value);td.appendChild(inp);tr.appendChild(td)});tb.appendChild(tr)});t.appendChild(tb);wrap.appendChild(t);table.appendChild(wrap);const ac=document.createElement('div');ac.className='actions';const calc=btn('Hitung Readiness'),wa=btn('Copy WhatsApp','btn secondary'),csv=btn('Excel/CSV','btn secondary'),pr=btn('Print/PDF','btn secondary');ac.append(calc,wa,csv,pr);table.appendChild(ac);calc.addEventListener('click',()=>calcF(sum));wa.addEventListener('click',()=>copy(fleetText()));csv.addEventListener('click',()=>csvDownload('fleet-readiness-breakdown',[['Unit','Status','HM Awal','HM Akhir','BD Min','Problem','Cause','Action','PIC','Follow-up'],...rows.fleet]));pr.addEventListener('click',()=>window.print());calcF(sum)}
+function calcF(sum){const n=rows.fleet.length,ready=rows.fleet.filter(r=>r[1].toLowerCase()==='ready').length,bd=rows.fleet.filter(r=>r[1].toLowerCase()==='breakdown').length,pct=n?ready/n*100:0;sum.innerHTML='<div class="statgrid"><div class="stat"><b>'+n+'</b><span>Total Unit</span></div><div class="stat"><b>'+ready+'</b><span>Ready</span></div><div class="stat"><b>'+bd+'</b><span>Breakdown</span></div><div class="stat"><b>'+pct.toFixed(1)+'%</b><span>Readiness</span></div></div><div class="notice">Breakdown wajib memiliki problem, cause, action, PIC dan follow-up.</div>'}
+function fleetText(){const n=rows.fleet.length,ready=rows.fleet.filter(r=>r[1].toLowerCase()==='ready').length,pct=n?ready/n*100:0;return '🔧 FLEET READINESS & BREAKDOWN\nTanggal: '+($('#fd')?.value||'-')+'\nFleet: '+n+' | Ready: '+ready+' | Readiness: '+pct.toFixed(1)+'%\n\nDETAIL:\n'+rows.fleet.map(r=>'• '+r[0]+' — '+r[1]+' | HM '+r[2]+'-'+r[3]+' | BD '+r[4]+' min\n  Problem: '+(r[5]||'-')+'\n  Cause: '+(r[6]||'-')+'\n  Action: '+(r[7]||'-')+'\n  PIC: '+(r[8]||'-')+' | Follow-up: '+(r[9]||'-')).join('\n')}
+function simple(title,fields,titleOut){const box=view(title);const fg=document.createElement('div');fg.className='formgrid';fields.forEach((f,i)=>field(fg,f.l,'s'+i,f.ta?'textarea':'text',f.p||''));box.appendChild(fg);const ac=document.createElement('div');ac.className='actions';const gen=btn('Buat Laporan'),wa=btn('Copy WhatsApp','btn secondary'),csv=btn('Excel/CSV','btn secondary'),pr=btn('Print/PDF','btn secondary');ac.append(gen,wa,csv,pr);box.appendChild(ac);const out=document.createElement('div');box.appendChild(out);const make=()=>{const text=titleOut+'\n'+fields.map((f,i)=>f.l+': '+($('#s'+i)?.value||'-')).join('\n');out.innerHTML='<div class="notice"><pre style="white-space:pre-wrap;color:var(--text)">'+esc(text)+'</pre></div>';return text};gen.addEventListener('click',make);wa.addEventListener('click',()=>copy(make()));csv.addEventListener('click',()=>csvDownload(titleOut,[fields.map(f=>f.l),fields.map((_,i)=>$('#s'+i)?.value||'')]));pr.addEventListener('click',()=>window.print())}
+function maintenance(){simple('🛠️ Maintenance / Work Order',[{l:'Unit / Asset',p:'DT-01'},{l:'HM',p:'12345'},{l:'Complaint / Problem',ta:1},{l:'Inspection / Finding',ta:1},{l:'Cause',ta:1},{l:'Action / Repair',ta:1},{l:'Spare Part',p:'Hose 1 pcs'},{l:'PIC',p:'ME Team'},{l:'Status',p:'Open / Closed'}],'🛠️ MAINTENANCE REPORT')}
+function safety(){simple('🦺 Safety / Toolbox Meeting',[{l:'Tanggal & Shift'},{l:'Topik',p:'Working at Height'},{l:'Hazard',ta:1},{l:'Risk',ta:1},{l:'Control',ta:1},{l:'PPE',ta:1},{l:'Briefing / Reminder',ta:1},{l:'PIC / Supervisor'}],'🦺 SAFETY TALK REPORT')}
+function office(){simple('✉️ Office & HR',[{l:'Jenis',p:'Email / Memo / Surat'},{l:'Kepada'},{l:'Subjek'},{l:'Konteks',ta:1},{l:'Poin penting',ta:1},{l:'Tindakan / Deadline',ta:1},{l:'Nama / Jabatan'}],'✉️ COMMUNICATION DRAFT')}
+function daily(){simple('📋 Daily / Shift Management Report',[{l:'Tanggal / Shift'},{l:'Site / Area'},{l:'Production Target',p:'2500 ton'},{l:'Production Actual',p:'2180 ton'},{l:'Achievement',p:'87.2%'},{l:'Fleet Readiness',p:'90%'},{l:'Safety / Incident',ta:1},{l:'Top Loss / Delay',ta:1},{l:'Corrective Action',ta:1},{l:'Management Summary',ta:1}],'📋 DAILY SHIFT REPORT')}
+function updateDashboard(m){const kAch=$('#kpiAch'),actual=$('#dashActual'),prod=$('#dashProd'),prog=$('#dashProgress');if(actual)actual.textContent=m.total.toLocaleString('id-ID');const targetLabel=$('#dashTargetLabel');if(targetLabel)targetLabel.textContent='target '+m.target.toLocaleString('id-ID')+' ton';if(prod)prod.textContent=m.prod.toFixed(1).replace('.',',');if(kAch)kAch.textContent=m.ach.toFixed(1)+'%';if(prog)prog.style.width=Math.min(100,m.ach)+'%';const panel=$('#supervisorDashboard .dashboard-grid .mini-panel:last-child');if(panel){panel.innerHTML='<div class="mini-title">Perlu Perhatian</div>'+rows.production.filter(r=>Number(r[6]||0)>0).sort((a,b)=>Number(b[6])-Number(a[6])).slice(0,3).map(r=>'<div class="alert-row">🔴 '+esc(r[0])+' — '+esc(r[7]||'Downtime')+' ('+r[6]+' min)</div>').join('')+(m.ach>=100?'<div class="alert-row">🟢 Target produksi tercapai</div>':'<div class="alert-row">🟡 Achievement di bawah target</div>');}}
+function openTool(n){ if(typeof window.consumeBetaUse==='function' && !window.consumeBetaUse()) return; ({production,fleet,maintenance,safety,daily,office}[n]||production)()}
+function xPlanAmount(plan){const p=plans.find(x=>x[0]===plan);return p?p[3]:0}
+function showCheckout(plan){const root=$('#modalRoot');root.innerHTML='';const m=document.createElement('div');m.className='modal';const c=document.createElement('div');c.className='card';c.innerHTML='<h2>Aktifkan '+plan+'</h2><p style="color:var(--muted)">Pembayaran aman melalui halaman checkout. Setelah transaksi berhasil, paket '+plan+' dapat diaktifkan untuk akun Anda.</p>';const e=document.createElement('input');e.className='field';e.style.width='100%';e.placeholder='Email akun';e.value=currentEmail;e.id='checkoutEmail';const pay=btn('Lanjut Pembayaran');const close=btn('Batal','btn secondary');c.append(e,pay,close);m.appendChild(c);root.appendChild(m);close.addEventListener('click',()=>root.innerHTML='');pay.addEventListener('click',async()=>{const email=e.value.trim();if(!email)return alert('Masukkan email');currentEmail=email;localStorage.setItem('mat_email',email);pay.disabled=true;pay.textContent='Membuat pembayaran...';try{const r=await fetch('/api/checkout',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email,plan,amount:Number(xPlanAmount(plan))})});const d=await r.json();if(d.demo){alert('Payment gateway belum diaktifkan oleh pemilik akun.');return}if(d.redirect_url)location.href=d.redirect_url;else if(d.token&&window.snap)window.snap.pay(d.token,{onSuccess:()=>location.href='/payment-success',onPending:()=>alert('Menunggu pembayaran'),onError:()=>alert('Pembayaran gagal')});else alert('Checkout siap tetapi client key belum terpasang.')}catch(err){alert('Gagal: '+err.message)}finally{pay.disabled=false;pay.textContent='Lanjut Pembayaran'}})}
+renderHome();
+</script>
+<section class="card trial-card" id="trialCard">
+  <div class="eyebrow">BETA ACCESS</div>
+  <h2>5 Kali Penggunaan Gratis</h2>
+  <p id="trialText">Anda mendapatkan 5 kali penggunaan untuk menguji MINING WORK OS. Setiap membuka modul kerja menggunakan 1 kesempatan.</p>
+  <div class="trial-meter"><i id="trialMeter" style="width:100%"></i></div>
+  <div class="notice">Setelah 5 penggunaan habis, modul kerja akan dikunci dan pengguna diarahkan ke pilihan paket.</div>
+</section>
+
+<script>
+(function(){
+  const KEY='mwo_beta_uses_v1';
+  const MAX=5;
+  const getUsed=()=>Number(localStorage.getItem(KEY) || 0);
+  function update(){
+    const used=Math.min(MAX,getUsed()), left=Math.max(0,MAX-used);
+    const t=document.getElementById('trialText'), m=document.getElementById('trialMeter'), u=document.getElementById('usage');
+    if(t)t.textContent=left>0 ? left+' kali penggunaan beta tersisa. Setiap membuka modul kerja menggunakan 1 kesempatan.' : 'Trial beta sudah habis. Silakan pilih paket untuk melanjutkan.';
+    if(m)m.style.width=(left/MAX*100)+'%';
+    if(u)u.textContent='BETA • '+left+' USES';
+  }
+  window.consumeBetaUse=function(){
+    const used=getUsed();
+    if(used>=MAX){
+      alert('Trial 5x sudah habis. Silakan pilih paket untuk melanjutkan.');
+      const p=document.getElementById('pricing'); if(p)p.scrollIntoView({behavior:'smooth'});
+      return false;
+    }
+    localStorage.setItem(KEY,String(used+1));
+    update();
+    return true;
+  };
+  window.resetBetaForTesting=function(){localStorage.removeItem(KEY);update();};
+  document.addEventListener('DOMContentLoaded',update);
+})();
+</script>
+
+<script>
+(function(){
+  if ('serviceWorker' in navigator && location.protocol !== 'file:') {
+    navigator.serviceWorker.register('./sw.js').catch(function(){});
+  }
+  let deferredPrompt = null;
+  const bar = document.getElementById('pwaInstallBar');
+  const btn = document.getElementById('installAppBtn');
+
+  window.addEventListener('beforeinstallprompt', function(e){
+    e.preventDefault();
+    deferredPrompt = e;
+    if(bar) bar.style.display='block';
+  });
+  if(btn){
+    btn.addEventListener('click', async function(){
+      if(!deferredPrompt) return;
+      deferredPrompt.prompt();
+      await deferredPrompt.userChoice;
+      deferredPrompt = null;
+      bar.style.display='none';
+    });
+  }
+  window.addEventListener('appinstalled', function(){
+    if(bar) bar.style.display='none';
+  });
+})();
+</script>
+
+</body></html>
